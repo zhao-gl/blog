@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+    lang: 'zh-CN',
     title: '技术博客',
     description: 'Vue3 + Vite + Vitepress 技术博客',
     appearance: 'dark',
