@@ -9,8 +9,8 @@ export default defineConfig({
     themeConfig: {
         nav: [
             { text: '首页', link: '/' },
-            { text: '博客', link: '/blog/post-1' },
-            { text: '项目', link: '/projects/post-3' }
+            { text: '博客', link: '/blog/blog-1' },
+            { text: '书籍', link: '/read/read-1' },
         ],
 
         sidebar: {
@@ -18,26 +18,25 @@ export default defineConfig({
                 {
                     text: '技术文章',
                     items: [
-                        { text: 'Vue3实战', link: '/blog/post-1' },
-                        { text: 'Vite优化', link: '/blog/post-2' }
+                        { text: 'Vue2', link: '/blog/blog-1' },
+                        { text: 'Vue3', link: '/blog/blog-1' },
+                        { text: 'Vite优化', link: '/blog/blog-2' }
                     ]
                 }
             ],
-            '/projects/': [
+            '/read/': [
                 {
-                    text: '项目',
+                    text: '阅读书籍',
                     items: [
-                        { text: 'Vue3实战', link: '/projects/post-3' },
+                        { text: '高性能JavaScript', link: '/read/read-1' },
                     ]
                 }
-             ]
+            ],
         },
 
         socialLinks: [
-            // { icon: 'github', link: 'https://github.com/yourusername' }
+            { icon: 'github', link: 'https://github.com/Zhao-GL' }
         ],
-
-        outline: false,
 
         footer: {
             message: 'MIT Licensed',
