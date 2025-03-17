@@ -9,26 +9,30 @@ export default defineConfig({
     themeConfig: {
         nav: [
             { text: '首页', link: '/' },
-            { text: '博客', link: '/blog/blog-1' },
-            { text: '书籍', link: '/read/read-1' },
+            { text: '博客', link: '/blogs/blog-1' },
+            { text: '书籍', link: '/books/book-1' },
         ],
 
         sidebar: {
-            '/blog/': [
+            '/blogs/': [
                 {
                     text: '技术文章',
                     items: [
-                        { text: 'Vue2', link: '/blog/blog-1' },
-                        { text: 'Vue3', link: '/blog/blog-1' },
-                        { text: 'Vite优化', link: '/blog/blog-2' }
+                        { text: '深入解析Vue2响应式原理', link: '/blogs/blog-1' },
+                        { text: '解构Vue3响应式系统', link: '/blogs/blog-2' },
+                        { text: '性能优化：提升用户体验的关键', link: '/blogs/blog-5' },
+                        { text: 'Vite优化', link: '/blogs/blog-5' }
                     ]
                 }
             ],
-            '/read/': [
+            '/books/': [
                 {
                     text: '阅读书籍',
                     items: [
-                        { text: '高性能JavaScript', link: '/read/read-1' },
+                        { text: 'JavaScript权威指南（第7版）', link: '/books/book-1' },
+                        { text: 'JavaScript高级程序设计', link: '/books/book-2' },
+                        { text: 'Vue.js设计与实现', link: '/books/book-3' },
+                        { text: '高性能JavaScript', link: '/books/book-4' },
                     ]
                 }
             ],
