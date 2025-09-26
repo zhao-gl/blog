@@ -58,7 +58,7 @@ importers:
         specifier: ^5
         version: 5.9.2
       vercel:
-        specifier: ^47.0.4
+        specifier: 47.0.4
         version: 47.0.4
 
 packages:
