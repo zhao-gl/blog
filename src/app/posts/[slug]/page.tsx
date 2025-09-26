@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getBlogPostBySlug, getBlogPosts } from '../../../lib/markdown-cms';
 import Markdown from 'react-markdown';
+import { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await getBlogPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const post = await getBlogPostBySlug((await params).slug);
   
   if (!post) {
     return {
@@ -20,33 +22,18 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
-  return posts.map((post: any) => ({
+  return posts.map((post) => ({
     slug: post.fields.slug,
   }));
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const post = await getBlogPostBySlug(params.slug);
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const post = await getBlogPostBySlug(resolvedParams.slug);
   
   if (!post) {
     notFound();
   }
-  
-  // 将 Markdown 内容转换为 HTML
-  const convertMarkdownToHtml = (markdown: string) => {
-    // 这里可以使用更复杂的转换库，如 marked 或 showdown
-    return markdown
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/#\s(.*?)\n/g, '<h1>$1</h1>')
-      .replace(/##\s(.*?)\n/g, '<h2>$1</h2>')
-      .replace(/###\s(.*?)\n/g, '<h3>$1</h3>')
-      .replace(/####\s(.*?)\n/g, '<h4>$1</h4>')
-      .replace(/#####\s(.*?)\n/g, '<h5>$1</h5>')
-      .replace(/######\s(.*?)\n/g, '<h6>$1</h6>')
-      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>')
-      .replace(/\n/g, '<br />');
-  };
   
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -64,9 +51,11 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         <article className="bg-white rounded-xl shadow-md overflow-hidden">
           {post.fields.featuredImage && (
             <div className="h-64 md:h-96 overflow-hidden">
-              <img 
+              <Image 
                 src={post.fields.featuredImage.fields.file.url} 
                 alt={post.fields.title}
+                width={800}
+                height={600}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -81,9 +70,11 @@ export default async function BlogPost({ params }: { params: { slug: string } })
                   <div className="flex items-center">
                     {post.fields.author.fields.avatar && (
                       <div className="w-8 h-8 rounded-full overflow-hidden mr-2">
-                        <img 
+                        <Image 
                           src={post.fields.author.fields.avatar?.fields?.file?.url || '/globe.svg'} 
                           alt={post.fields.author.fields.name}
+                          width={32}
+                          height={32}
                           className="w-full h-full object-cover"
                         />
                       </div>

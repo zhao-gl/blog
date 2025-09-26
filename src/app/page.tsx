@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getBlogPosts } from '../lib/markdown-cms';
 
 export default async function Home() {
@@ -19,16 +20,18 @@ export default async function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">最新文章</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((post: any) => (
+              {blogPosts.map((post) => (
                 <article 
                   key={post.sys.id} 
                   className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
                   {post.fields.featuredImage && (
                     <div className="h-48 overflow-hidden">
-                      <img 
+                      <Image 
                         src={post.fields.featuredImage.fields.file.url} 
                         alt={post.fields.title}
+                        width={500}
+                        height={300}
                         className="w-full h-full object-cover"
                       />
                     </div>

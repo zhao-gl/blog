@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // 配置构建输出目录
+  distDir: 'build',
 };
 
 export default nextConfig;

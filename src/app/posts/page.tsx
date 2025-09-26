@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getBlogPosts } from '../../lib/markdown-cms';
 
 export default async function PostsPage() {
@@ -15,9 +16,11 @@ export default async function PostsPage() {
               <Link href={`/posts/${post.fields.slug}`} className="block">
                 {post.fields.featuredImage && (
                   <div className="h-48 overflow-hidden">
-                    <img 
+                    <Image 
                       src={post.fields.featuredImage.fields.file.url} 
                       alt={post.fields.title}
+                      width={500}
+                      height={300}
                       className="w-full h-full object-cover"
                     />
                   </div>

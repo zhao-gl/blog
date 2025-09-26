@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getPageBySlug } from '../../lib/markdown-cms';
 import Markdown from 'react-markdown';
 
@@ -28,9 +29,11 @@ export default async function About() {
             
             {page.fields.featuredImage && (
               <div className="mb-8">
-                <img 
+                <Image 
                   src={page.fields.featuredImage.fields.file.url} 
                   alt={page.fields.title}
+                  width={800}
+                  height={400}
                   className="w-full h-64 object-cover rounded-lg"
                 />
               </div>
