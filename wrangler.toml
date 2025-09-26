@@ -1,9 +1,0 @@
-#:schema node_modules/wrangler/config-schema.json
-name = "nextjs-blog"
-compatibility_date = "2024-09-26"
-compatibility_flags = ["nodejs_compat"]
-node_compat = true
-
-# Node.js 版本配置
-[env.production]
-node_version = "20.x"
