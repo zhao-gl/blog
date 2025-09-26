@@ -14,7 +14,7 @@
   "dependencies": {
     "contentful": "^11.7.19",
     "gray-matter": "^4.0.3",
-    "next": "15.5.4",
+    "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-markdown": "^10.1.0"
@@ -29,7 +29,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vercel": "^47.0.4"
   },
   "engines": {
     "node": "20.x"
