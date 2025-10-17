@@ -24,7 +24,7 @@ const config: Config = {
     metadata: [
       {
         name: 'keywords',
-        content: '愧怍, kuizuo, blog, javascript, typescript, node, react, vue, web, 前端, 后端',
+        content: 'zhaogl, kuizuo, blog, javascript, typescript, node, react, vue, web, 前端, 后端',
       },
     ],
     // ...
@@ -47,7 +47,7 @@ export default config
 
 ### 基本信息
 
-站点名和作者名只需要搜索 **愧怍** 或 **kuizuo** 便能找到关键位置，将其更改为你的便可。
+站点名和作者名只需要搜索 **zhaogl** 或 **kuizuo** 便能找到关键位置，将其更改为你的便可。
 
 ### 关于我 页面
 

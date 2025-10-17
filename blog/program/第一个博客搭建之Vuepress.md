@@ -100,7 +100,7 @@ module.exports = {
     "search": true,
     "searchMaxSuggestions": 10,
     "lastUpdated": "Last Updated",
-    "author": "愧怍",
+    "author": "zhaogl",
     "authorAvatar": "/logo.png",
     "record": "xxxx",
     "startYear": "2017"
@@ -174,7 +174,7 @@ tags:
   - 笔记
 categories:
   - 个人学习笔记
-author: 愧怍
+author: zhaogl
 keys:
   - 'e9bc0e13a8a16cbb07b175d92a113126'
 publish: false

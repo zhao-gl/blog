@@ -376,7 +376,7 @@ export function deactivate() {}
   "activitybar": [
     {
       "id": "demo",
-      "title": "愧怍",
+      "title": "zhaogl",
       "icon": "public/lollipop.svg"
     }
   ]
