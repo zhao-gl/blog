@@ -9,10 +9,10 @@ const beian1 = '闽公网安备35021102000847号'
 
 const config: Config = {
   title: 'zhaogl',
-  url: 'https://kuizuo.me',
+  url: 'https://zhaogl.me',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'kuizuo',
+  organizationName: 'zhaogl',
   projectName: 'blog',
   customFields: {
     bio: '道阻且长，行则将至',
@@ -79,7 +79,7 @@ const config: Config = {
             { label: '博客', to: 'blog' },
             { label: '归档', to: 'blog/archive' },
             { label: '实战项目', to: 'project' },
-            { label: '前端示例', to: 'https://example.kuizuo.me' },
+            { label: '前端示例', to: 'https://example.zhaogl.me' },
           ],
         },
         {
@@ -95,11 +95,11 @@ const config: Config = {
         {
           title: '网站',
           items: [
-            { label: 'js反混淆', to: 'https://js-deobfuscator.kuizuo.me' },
+            { label: 'js反混淆', to: 'https://js-deobfuscator.zhaogl.me' },
             { label: 'cyberChef', to: 'https://gchq.github.io/CyberChef' },
-            { label: 'api服务', to: 'https://api.kuizuo.me' },
-            { label: '便民服务', to: 'https://service.kuizuo.me' },
-            { label: '站点监控', to: 'https://uptime.kuizuo.me' },
+            { label: 'api服务', to: 'https://api.zhaogl.me' },
+            { label: '便民服务', to: 'https://service.zhaogl.me' },
+            { label: '站点监控', to: 'https://uptime.zhaogl.me' },
           ],
         },
         {
@@ -120,13 +120,13 @@ const config: Config = {
         <p style="margin-bottom: 0;"><a href="http://beian.miit.gov.cn/">${beian}</a></p>
         <p style="display: inline-flex; align-items: center;"><img style="height:20px;margin-right: 0.5rem;" src="/img/police.png" alt="police" height="20"/><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${beian1.match(/\d+/)?.[0]
         }" >${beian1}</a></p>
-        <p>Copyright © 2020 - ${new Date().getFullYear()} kuizuo. | Built with Docusaurus.</p>
+        <p>Copyright © 2020 - ${new Date().getFullYear()} zhaogl. | Built with Docusaurus.</p>
         `,
     },
     algolia: {
       appId: 'GV6YN1ODMO',
       apiKey: '50303937b0e4630bec4a20a14e3b7872',
-      indexName: 'kuizuo',
+      indexName: 'zhaogl',
     },
     prism: {
       theme: themes.oneLight,
@@ -146,7 +146,7 @@ const config: Config = {
       ],
     },
     giscus: {
-      repo: 'kuizuo/blog',
+      repo: 'zhaogl/blog',
       repoId: 'MDEwOlJlcG9zaXRvcnkzOTc2MjU2MTI=',
       category: 'General',
       categoryId: 'DIC_kwDOF7NJDM4CPK95',
@@ -217,7 +217,7 @@ const config: Config = {
       {
         path: 'blog',
         editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
-          `https://github.com/kuizuo/blog/edit/main/${blogDirPath}/${blogPath}`,
+          `https://github.com/zhaogl/blog/edit/main/${blogDirPath}/${blogPath}`,
         editLocalizedFiles: false,
         blogDescription: '代码人生：编织技术与生活的博客之旅',
         blogSidebarCount: 10,
@@ -256,7 +256,7 @@ const config: Config = {
                 innerHTML: `
     (${function () {
       console.log(
-        `%c Kz Blog %c https://github.com/kuizuo/blog`,
+        `%c Kz Blog %c https://github.com/zhaogl/blog`,
         'color: #fff; margin: 1em 0; padding: 5px 0; background: #12affa;',
         'margin: 1em 0; padding: 5px 0; background: #efefef;',
       )

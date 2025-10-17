@@ -2,7 +2,7 @@
 slug: protocol-template
 title: Protocol 协议复现模板
 date: 2022-10-30
-authors: kuizuo
+authors: zhaogl
 tags: [project, protocol, template, nuxt]
 keywords: [project, protocol, template, nuxt]
 description: 一个用于快速复现请求协议的 Web 开发模板。基于 Nuxt 开发，并集成了NaiveUI，Unocss，等相关工具库封装。
@@ -15,9 +15,9 @@ image: /img/project/protocol.png
 
 我曾经是做 API 请求的，经常要模拟某些请求（协议复现）。所以写过比较多的 api 请求代码，在此期间尝试编写过许多代码方式和软件形态。但都不令我满意，不是过于繁琐，就是开发太慢，都达不到我想要的预期。尤其是开发体验，可以说是苦不堪言。
 
-就在前段时间接触了 SSR 框架（Nuxt3）与 Serverless Function，并用其写了一些项目，如 [api-service](https://github.com/kuizuo/api-service 'api-service') 。而[某了个羊刷次数的网站](https://7y8y.vercel.app)的实现，则让我意外发现这貌似就是我理想中的的协议复现最佳实现？于是我立马开启了 VSCode，将我的这一想法用代码的方式来实现出来，在经历了两周几乎不间断的开发，最终达到了我的预期效果！
+就在前段时间接触了 SSR 框架（Nuxt3）与 Serverless Function，并用其写了一些项目，如 [api-service](https://github.com/zhaogl/api-service 'api-service') 。而[某了个羊刷次数的网站](https://7y8y.vercel.app)的实现，则让我意外发现这貌似就是我理想中的的协议复现最佳实现？于是我立马开启了 VSCode，将我的这一想法用代码的方式来实现出来，在经历了两周几乎不间断的开发，最终达到了我的预期效果！
 
-在 [模拟请求|协议复现方案](https://kuizuo.me/request-protocol-scheme '模拟请求|协议复现方案') 这篇文章中我对协议复现的一些方案总结，而这篇就是对 SSR 框架方案的一个具体实践。
+在 [模拟请求|协议复现方案](https://zhaogl.me/request-protocol-scheme '模拟请求|协议复现方案') 这篇文章中我对协议复现的一些方案总结，而这篇就是对 SSR 框架方案的一个具体实践。
 
 ## 技术栈
 
@@ -25,7 +25,7 @@ image: /img/project/protocol.png
 
 为此我给这个模板起名 Protocol，即协议，也可以认为是礼仪。**一个用于快速复现请求协议的 Web 开发模板。**
 
-废话不多数，就正式来介绍下 [Protocol](https://github.com/kuizuo/protocol 'Protocol')。
+废话不多数，就正式来介绍下 [Protocol](https://github.com/zhaogl/protocol 'Protocol')。
 
 ## 目录结构
 
@@ -68,7 +68,7 @@ protocol
 
 ### 全栈开发
 
-这里我不想过多介绍 Nuxt3 的基本功能与使用，在我的一个 [基于 Nuxt3 的 API 接口服务网站](https://kuizuo.me/use-nuxt3-build-api-server#nuxt3-介绍 '基于Nuxt3的API接口服务网站') 的项目中，有简单介绍过 Nuxt3，有兴趣可以去看看。
+这里我不想过多介绍 Nuxt3 的基本功能与使用，在我的一个 [基于 Nuxt3 的 API 接口服务网站](https://zhaogl.me/use-nuxt3-build-api-server#nuxt3-介绍 '基于Nuxt3的API接口服务网站') 的项目中，有简单介绍过 Nuxt3，有兴趣可以去看看。
 
 这里你只需要知道 Nuxt3 具有全栈开发的能力，如果你想，完成可以基于 Nuxt3 这个技术栈来实现 Web 开发的前端后端工作。
 
@@ -76,7 +76,7 @@ protocol
 
 首先，最重要的就是类型提示，对于大多数 api 请求而言，类型往往常被忽略。这就导致不知道这个请求的提交参数、响应结果有什么数据字段。举个例子
 
-![](https://img.kuizuo.me/75GsdEZuLK.png)
+![](https://img.zhaogl.me/75GsdEZuLK.png)
 
 这是一个 post 请求用于实现登录的，但是这个响应数据 data 没有任何具体提示（这里的提示是 vscode 记录用户常输入的提示），这时候如果一旦拼接错误，就会导致某个数据没拿到，从而诱发 bug。同理提交的请求体 body 不做约束，万一这个请求还有验证码 code 参数，但是我没写上，那请求就会失败，这是就需要通过调试输出，甚至需要抓包比对原始数据包才能得知。
 
@@ -90,17 +90,17 @@ Uncaught TypeError: Cannot read properties of undefined (reading 'data')
 
 对于 js 而言，上述情况自然是解决不了，但这种场景对于 ts 来说在适合不过了。所以 Protocol 自然是集成了 ts，并且有良好的类型提示。下面展示几张开发时的截图就能体会到，当然你前提是得会 ts 或者看的懂 ts。
 
-![](https://img.kuizuo.me/VbEuizLRfz.png)
+![](https://img.zhaogl.me/VbEuizLRfz.png)
 
 上面的类型提示演示代码仅仅作为体现类型的好处，将类型定义（interface，type 等）和核心逻辑都在同一个文件自然不好，容易造成代码冗余。实际开发中，更多使用命名空间，将类型写到 ts 声明文件.d.ts 中。比如将上面的改写后如下
 
-![](https://img.kuizuo.me/48-YSpYd1g.png)
+![](https://img.zhaogl.me/48-YSpYd1g.png)
 
-![](https://img.kuizuo.me/9b9ns2BM67.png)
+![](https://img.zhaogl.me/9b9ns2BM67.png)
 
 就在我写这篇文章做代码演示的时候，又发生了拼写错误，如下图。由于使用 ts 类型与 eslint，所以在开发时的问题我就能立马发现，而不是到了运行时才提示错误。
 
-![](https://img.kuizuo.me/PfpxCKZomB.png)
+![](https://img.zhaogl.me/PfpxCKZomB.png)
 
 **有了类型提示能非常有效的避免上述问题**。同时 ts 并不像 java 那样的强类型语言，你完全可以选择是否编写 ts 的类型（type 或 interfere），这由你决定，你乐意都可以将 typescript 写成 anyscript，因为确实有些人确实不喜欢写类型。
 
@@ -108,7 +108,7 @@ ts 的类型提示仅是其次，此外还配置了 eslint 对代码检查，让
 
 ### 工具库
 
-要想在实际项目中使用，还需要做很多功课，例如数据格式转换，编码，加解密，cookie 存储，IP 代理等等。这段时间也特此对常用工具封装成 npm 包，也就是 [@kuizuo/http](https://www.npmjs.com/package/@kuizuo/http) 与 [@kuizuo/utils](https://www.npmjs.com/package/@kuizuo/utils)。
+要想在实际项目中使用，还需要做很多功课，例如数据格式转换，编码，加解密，cookie 存储，IP 代理等等。这段时间也特此对常用工具封装成 npm 包，也就是 [@zhaogl/http](https://www.npmjs.com/package/@zhaogl/http) 与 [@zhaogl/utils](https://www.npmjs.com/package/@zhaogl/utils)。
 
 大部分的代码我都会采用最新的 ECMAScript 标准来编写，目的也是为了简化代码，减少不必要的负担。
 
@@ -238,8 +238,8 @@ export default defineAppConfig({
   title: 'Protocol',
   description: '一个用于快速复现请求协议的Web开发模板。',
   author: {
-    name: 'kuizuo',
-    link: 'https://github.com/kuizuo',
+    name: 'zhaogl',
+    link: 'https://github.com/zhaogl',
     qq: 'https://im.qq.com/',
     wx: 'https://wx.qq.com/',
   },
@@ -253,7 +253,7 @@ export default defineAppConfig({
 这里以调用 Github 的 api 为例，因为业务相对简单，所以使用的是静态方法来调用，简单展示一下代码
 
 ```javascript title='server/protocol/github/index.ts'
-import { AHttp } from '@kuizuo/http'
+import { AHttp } from '@zhaogl/http'
 
 const http = new AHttp({ baseURL: 'https://api.github.com' })
 
@@ -276,7 +276,7 @@ export class Github {
 我个人是习惯也喜欢将逻辑部分用 [class](https://es6.ruanyifeng.com/#docs/class) 的方式来编写，也推荐用这种去定义这些业务逻辑代码。这里我举个例子来说明，假设现在有一个博客网站，有登陆、获取博文列表、评论等功能。那么我会这么写
 
 ```javascript
-import { AHttp } from '@kuizuo/http'
+import { AHttp } from '@zhaogl/http'
 
 interface User {
   username: string
@@ -288,7 +288,7 @@ export class Blog {
   public user: User
 
   constructor(user: User) {
-    this.http = new AHttp({ baseURL: 'https://blog.kuizuo.me' })
+    this.http = new AHttp({ baseURL: 'https://blog.zhaogl.me' })
     this.user = User
   }
 
@@ -310,7 +310,7 @@ export class Blog {
 定义完这些后，我只需要实例化一个对象 account，调用 login 方法即可登录，后续的获取博文列表与评论操作我只需要拿这个 account 来操作即可。
 
 ```javascript
-const account = new Blog({ username: 'kuizuo', password: '123456' })
+const account = new Blog({ username: 'zhaogl', password: '123456' })
 await account.login()
 
 const blogList = await account.getBlogList()
@@ -345,7 +345,7 @@ export default defineEventHandler(async event => {
 })
 ```
 
-这一部分的代码建立在 Serverless Function 上，每一个接口都是以函数的方式对外暴露出去。这些代码会根据文件位置生成对应的路由，比如说上面的文件为 `server/api/user/[username].ts`，就映射为 `/api/user/:username`，前端请求 `/api/user/kuizuo` 通过`event.context.params.username` 便可以拿到 username 的值为 kuizuo。
+这一部分的代码建立在 Serverless Function 上，每一个接口都是以函数的方式对外暴露出去。这些代码会根据文件位置生成对应的路由，比如说上面的文件为 `server/api/user/[username].ts`，就映射为 `/api/user/:username`，前端请求 `/api/user/zhaogl` 通过`event.context.params.username` 便可以拿到 username 的值为 zhaogl。
 
 至此后端部分就暂以告告落。
 
@@ -409,7 +409,7 @@ export const useUserStore = definePiniaStore('user', () => {
 
 ```vue title='components\Demo.vue'
 <script setup lang="ts">
-let username = $ref('kuizuo')
+let username = $ref('zhaogl')
 let loading = $ref(false)
 
 const userStore = useUserStore()
