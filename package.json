@@ -2,15 +2,15 @@
   "name": "blog",
   "version": "3.0.0",
   "author": {
-    "url": "https://github.com/kuizuo",
-    "email": "hi@kuizuo.me",
-    "name": "愧怍"
+    "url": "https://github.com/zhao-gl",
+    "email": "zhao-gl@qq.com",
+    "name": "zhaogl"
   },
   "repository": {
-    "url": "https://github.com/kuizuo/blog",
+    "url": "https://github.com/zhao-gl",
     "type": "git"
   },
-  "homepage": "https://kuizuo.me",
+  "homepage": "https://lifewatcher.cn",
   "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
@@ -28,28 +28,25 @@
     "index": "docker run -it --env-file=.env -e \"CONFIG=$(cat docsearch.json | jq -r tostring)\" algolia/docsearch-scraper"
   },
   "dependencies": {
-    "@docusaurus/core": "3.8.1",
-    "@docusaurus/faster": "^3.8.1",
-    "@docusaurus/plugin-ideal-image": "3.8.1",
-    "@docusaurus/plugin-pwa": "3.8.1",
-    "@docusaurus/plugin-vercel-analytics": "^3.8.1",
-    "@docusaurus/preset-classic": "3.8.1",
-    "@docusaurus/theme-search-algolia": "3.8.1",
+    "@docusaurus/core": "3.9.1",
+    "@docusaurus/faster": "^3.9.1",
+    "@docusaurus/plugin-pwa": "3.9.1",
+    "@docusaurus/plugin-vercel-analytics": "^3.9.1",
+    "@docusaurus/preset-classic": "3.9.1",
+    "@docusaurus/theme-search-algolia": "3.9.1",
     "@giscus/react": "^3.1.0",
     "@popperjs/core": "^2.11.8",
     "@radix-ui/react-slot": "^1.1.1",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
-    "docusaurus-plugin-baidu-tongji": "0.0.0-beta.4",
-    "docusaurus-plugin-image-zoom": "^2.0.0",
     "mini-svg-data-uri": "^1.4.4",
     "motion": "^11.18.1",
     "ora": "^8.1.1",
     "postcss": "^8.5.1",
     "prism-react-renderer": "^2.4.1",
     "raw-loader": "^4.0.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-github-calendar": "^4.5.4",
     "react-icon-cloud": "^4.1.7",
     "react-popper": "^2.3.0",
@@ -58,7 +55,7 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.8.1",
+    "@docusaurus/module-type-aliases": "3.9.1",
     "@docusaurus/tsconfig": "^3.8.1",
     "@docusaurus/types": "3.8.1",
     "@iconify/react": "^5.2.0",
@@ -74,10 +71,5 @@
   "engines": {
     "node": ">=20.0"
   },
-  "packageManager": "pnpm@9.15.4",
-  "pnpm": {
-    "overrides": {
-      "sharp@0.34.6": "false"
-    }
-  }
+  "packageManager": "pnpm@9.15.4"
 }

@@ -1,8 +1,8 @@
 import type * as Preset from '@docusaurus/preset-classic'
-import type { Config } from '@docusaurus/types'
-import { themes } from 'prism-react-renderer'
+import type {Config} from '@docusaurus/types'
+import {themes} from 'prism-react-renderer'
 import social from './data/social'
-import type { GiscusConfig } from './src/components/Comment'
+import type {GiscusConfig} from './src/components/Comment'
 
 const beian = '闽ICP备2020017848号-3'
 const beian1 = '闽公网安备35021102000847号'
@@ -190,8 +190,8 @@ const config: Config = {
     ],
   ],
   plugins: [
-    'docusaurus-plugin-image-zoom',
-    '@docusaurus/plugin-ideal-image',
+    // 'docusaurus-plugin-image-zoom',
+    // '@docusaurus/plugin-ideal-image',
     // ['docusaurus-plugin-baidu-tongji', { token: 'c9a3849aa75f9c4a4e65f846cd1a5155' }],
     [
       '@docusaurus/plugin-pwa',

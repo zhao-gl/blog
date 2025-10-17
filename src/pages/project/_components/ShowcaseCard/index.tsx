@@ -1,13 +1,13 @@
 import Link from '@docusaurus/Link'
 import Translate from '@docusaurus/Translate'
-import { type Project, type Tag, TagList, type TagType, Tags } from '@site/data/projects'
+import {type Project, type Tag, TagList, Tags, type TagType} from '@site/data/projects'
 import Tooltip from '@site/src/components/Tooltip'
-import { MagicCard } from '@site/src/components/magicui/magic-card'
+import {MagicCard} from '@site/src/components/magicui/magic-card'
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon'
-import { cn } from '@site/src/lib/utils'
-import { sortBy } from '@site/src/utils/jsUtils'
-import Image from '@theme/IdealImage'
-import React, { memo } from 'react'
+import {cn} from '@site/src/lib/utils'
+import {sortBy} from '@site/src/utils/jsUtils'
+// import Image from '@theme/IdealImage'
+import React, {memo} from 'react'
 import styles from './styles.module.css'
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, description }, ref) => (
@@ -43,7 +43,7 @@ const ShowcaseCard = memo(({ project }: { project: Project }) => {
     <MagicCard key={project.title} className={cn('card', styles.showcaseCard)}>
       {project.preview && (
         <div className={cn('card__image', styles.showcaseCardImage)}>
-          <Image src={project.preview} alt={project.title} img={project.preview} />
+            {/*<Image src={project.preview} alt={project.title} img={project.preview} />*/}
         </div>
       )}
       <div className="card__body">

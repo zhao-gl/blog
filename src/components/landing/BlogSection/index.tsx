@@ -1,12 +1,12 @@
 import Link from '@docusaurus/Link'
 import Translate from '@docusaurus/Translate'
-import type { BlogPost } from '@docusaurus/plugin-content-blog'
-import { usePluginData } from '@docusaurus/useGlobalData'
-import { cn } from '@site/src/lib/utils'
-import Image from '@theme/IdealImage'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import type {BlogPost} from '@docusaurus/plugin-content-blog'
+import {usePluginData} from '@docusaurus/useGlobalData'
+import {cn} from '@site/src/lib/utils'
+// import Image from '@theme/IdealImage'
+import {motion, useScroll, useTransform} from 'framer-motion'
 import React from 'react'
-import { Section } from '../Section'
+import {Section} from '../Section'
 
 const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) => arr.slice(i * size, i * size + size))
@@ -30,7 +30,7 @@ export function BlogItem({ post }: { post: BlogPost }) {
     >
       {frontMatter.image && (
         <Link href={permalink} className="max-h-[240px] w-full cursor-pointer overflow-hidden object-cover">
-          <Image src={frontMatter?.image} alt={title} img="" />
+          {/*<Image src={frontMatter?.image} alt={title} img="" />*/}
         </Link>
       )}
       <div className="card__body">
