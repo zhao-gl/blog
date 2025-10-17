@@ -54,16 +54,16 @@ const config: Config = {
       items: [
         { label: '博客', position: 'right', to: 'blog' },
         { label: '项目', position: 'right', to: 'project' },
-        { label: '友链', position: 'right', to: 'friends' },
+        // { label: '友链', position: 'right', to: 'friends' },
         { label: '关于', position: 'right', to: 'about' },
-        {
-          label: '更多',
-          position: 'right',
-          items: [
-            { label: '归档', to: 'blog/archive' },
-            { label: '主题魔改', to: 'docs/docusaurus-guides' },
-          ],
-        },
+        // {
+        //   label: '更多',
+        //   position: 'right',
+        //   items: [
+        //     { label: '归档', to: 'blog/archive' },
+        //     { label: '主题魔改', to: 'docs/docusaurus-guides' },
+        //   ],
+        // },
         // {
         //   type: 'localeDropdown',
         //   position: 'right',
