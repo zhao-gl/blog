@@ -2,16 +2,15 @@
 zhaogl的个人博客
 </h2>
 <p align="center">
-<a href="https://vercel.com/new/clone?repository-url=https://github.com/kuizuo/blog/tree/main&project-name=blog&repo-name=blog" rel="nofollow"><img src="https://vercel.com/button"></a>
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/kuizuo/blog" rel="nofollow"><img src="https://www.netlify.com/img/deploy/button.svg"></a>
-<a href="https://stackblitz.com/github/kuizuo/blog" rel="nofollow"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg"></a>
+<a href="https://deploy.workers.cloudflare.com/?url=https://github.com/zhao-gl/blog" rel="nofollow"><img style="height: 33px;margin-bottom: -1px" src="https://deploy.workers.cloudflare.com/button"></a>
+<a href="https://stackblitz.com/github/zhao-gl/blog" rel="nofollow"><img style="height: 32px" src="https://developer.stackblitz.com/img/open_in_stackblitz.svg"></a>
 </p>
 
 ## 👋 介绍
 
 在这里我会分享各类技术栈所遇到问题与解决方案，带你了解最新的技术栈以及实际开发中如何应用，并希望我的开发经历对你有所启发。
 
-如果你想要搭建一个类似的站点，可直接 [Fork](https://github.com/kuizuo/blog/fork) 本仓库使用，或者通过 [StackBlitz](https://stackblitz.com/github/kuizuo/blog) 在线运行本项目，通过 [Vercel](https://vercel.com/new/clone?repository-url=https://github.com/kuizuo/blog/tree/main&project-name=blog&repo-name=blog) 一键部署。
+如果你想要搭建一个类似的站点，可直接 [Fork](https://github.com/zhao-gl/blog/fork) 本仓库使用，或者通过 [StackBlitz](https://stackblitz.com/github/zhao-gl/blog) 在线运行本项目，通过 [Coludflare](https://deploy.workers.cloudflare.com/?url=https://github.com/zhao-gl/blog) 一键部署。
 
 ## ✨ 特性
 
@@ -29,8 +28,6 @@ zhaogl的个人博客
 - 🌈 **资源导航** - 收集并分享有用、有意思的资源
 - 📦 **项目展示** - 展示你的项目，可用作于作品集
 
-我的主题魔改实现：[Docusaurus 主题魔改](https://kuizuo.me/docs/docusaurus-guides)
-
 ## :wrench: 技术栈
 
 - Docusaurus
@@ -46,10 +43,8 @@ zhaogl的个人博客
 │   └── doc.md
 ├── data
 │   ├── feature.tsx                # 特点
-│   ├── friends.tsx                # 友链
 │   ├── projects.tsx               # 项目
 │   ├── skills.tsx                 # 技术栈
-│   └── social.ts                  # 社交链接
 ├── i18n                           # 国际化
 ├── src
 │   ├── components                 # 组件
@@ -69,7 +64,7 @@ zhaogl的个人博客
 ## 📥 运行
 
 ```bash
-git clone https://github.com/kuizuo/blog.git
+git clone https://github.com/zhao-gl/blog.git
 cd blog
 pnpm install
 pnpm start
@@ -83,7 +78,7 @@ pnpm build
 
 ## 📷 截图
 
-<img width="1471" alt="Live Demo" src="https://github.com/kuizuo/blog/blob/main/static/img/og.png?raw=true">
+<img width="1471" alt="Live Demo" src="https://github.com/zhao-gl/blog/static/img/og.png?raw=true">
 
 ## 📝 许可证
 
