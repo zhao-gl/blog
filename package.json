@@ -18,7 +18,7 @@
     "start:en": "docusaurus start --locale en",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
+    "deploy": "pnpm install --no-frozen-lockfile && pnpm run build",
     "clear": "docusaurus clear && rimraf changelog",
     "serve": "docusaurus serve",
     "lint": "eslint .",
