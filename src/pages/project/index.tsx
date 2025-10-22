@@ -10,6 +10,7 @@ import { MagicContainer } from '@site/src/components/magicui/magic-card'
 import MyLayout from '@site/src/theme/MyLayout'
 import { upperFirst } from '@site/src/utils/jsUtils'
 import styles from './styles.module.css'
+import {JSX} from "react";
 
 const TITLE = translate({
   id: 'theme.project.title',

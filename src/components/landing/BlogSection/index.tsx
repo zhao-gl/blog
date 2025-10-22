@@ -5,7 +5,7 @@ import {usePluginData} from '@docusaurus/useGlobalData'
 import {cn} from '@site/src/lib/utils'
 // import Image from '@theme/IdealImage'
 import {motion, useScroll, useTransform} from 'framer-motion'
-import React from 'react'
+import React, {JSX} from 'react'
 import {Section} from '../Section'
 
 const chunk = (arr, size) =>
