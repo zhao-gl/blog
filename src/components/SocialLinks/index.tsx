@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react'
 import social from '@site/data/social'
 import Tooltip from '@site/src/components/Tooltip'
-import React from 'react'
+import React, { JSX } from 'react'
 import styles from './styles.module.css'
 
 export type Social = {

@@ -1,13 +1,9 @@
 export type Social = {
   github?: string
-  x?: string
   juejin?: string
-  qq?: string
   wx?: string
-  cloudmusic?: string
   zhihu?: string
   email?: string
-  discord?: string
 }
 
 type SocialValue = {
@@ -19,17 +15,13 @@ type SocialValue = {
 
 const social: Social = {
   github: 'https://github.com/zhaogl',
-  x: 'https://twitter.com/zhaogl',
   juejin: 'https://juejin.cn/user/1565318510545901',
   wx: 'https://img.zhaogl.me/wechat.png',
-  // qq: 'https://img.zhaogl.me/qq.png',
-  // zhihu: 'https://www.zhihu.com/people/zhaogl',
-  cloudmusic: 'https://music.163.com/#/user/home?id=1333010742',
+  zhihu: 'https://www.zhihu.com/people/zhaogl',
   email: 'mailto:hi@zhaogl.me',
-  discord: 'https://discord.gg/M8cVcjDxkz',
 }
 
-const socialSet: Record<keyof Social | 'rss', SocialValue> = {
+const socialSet: Record<keyof Social, SocialValue> = {
   github: {
     href: social.github,
     title: 'GitHub',
@@ -41,12 +33,6 @@ const socialSet: Record<keyof Social | 'rss', SocialValue> = {
     title: '掘金',
     icon: 'simple-icons:juejin',
     color: '#1E81FF',
-  },
-  x: {
-    href: social.x,
-    title: 'X',
-    icon: 'ri:twitter-x-line',
-    color: '#000',
   },
   wx: {
     href: social.wx,
@@ -60,35 +46,11 @@ const socialSet: Record<keyof Social | 'rss', SocialValue> = {
     icon: 'ri:zhihu-line',
     color: '#1772F6',
   },
-  discord: {
-    href: social.discord,
-    title: 'Discord',
-    icon: 'ri:discord-line',
-    color: '#5A65F6',
-  },
-  qq: {
-    href: social.qq,
-    title: 'QQ',
-    icon: 'ri:qq-line',
-    color: '#1296db',
-  },
   email: {
     href: social.email,
     title: '邮箱',
     icon: 'ri:mail-line',
     color: '#D44638',
-  },
-  cloudmusic: {
-    href: social.cloudmusic,
-    title: '网易云',
-    icon: 'ri:netease-cloud-music-line',
-    color: '#C20C0C',
-  },
-  rss: {
-    href: '/blog/rss.xml',
-    title: 'RSS',
-    icon: 'ri:rss-line',
-    color: '#FFA501',
   },
 }
 
