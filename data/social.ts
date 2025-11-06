@@ -14,11 +14,11 @@ type SocialValue = {
 }
 
 const social: Social = {
-  github: 'https://github.com/zhaogl',
-  juejin: 'https://juejin.cn/user/1565318510545901',
-  wx: 'https://img.zhaogl.me/wechat.png',
-  zhihu: 'https://www.zhihu.com/people/zhaogl',
-  email: 'mailto:hi@zhaogl.me',
+  github: 'https://github.com/zhao-gl',
+  juejin: 'https://juejin.cn/user/2630450399415752',
+  wx: 'https://u.wechat.com/MKSaZgBS0UQsKn3L2Sgd98Q?s=4', // todo 微信二维码
+  zhihu: 'https://www.zhihu.com/people/rru-feng',
+  email: 'zhao-gl@qq.com',
 }
 
 const socialSet: Record<keyof Social, SocialValue> = {
