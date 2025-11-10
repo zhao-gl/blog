@@ -17,7 +17,7 @@ const social: Social = {
   github: 'https://github.com/zhao-gl',
   juejin: 'https://juejin.cn/user/2630450399415752',
   wx: 'https://u.wechat.com/MKSaZgBS0UQsKn3L2Sgd98Q?s=4', // todo 微信二维码
-  zhihu: 'https://www.zhihu.com/people/rru-feng',
+  zhihu: 'https://www.zhihu.com/people/zhao_gl',
   email: 'zhao-gl@qq.com',
 }
 
