@@ -18,7 +18,7 @@ const TITLE = translate({
 })
 const DESCRIPTION = translate({
   id: 'theme.project.description',
-  message: '学而无用，不如学而用之。这里是我在技术领域中努力实践和应用的最佳证明。',
+  message: '先完成再完美，在解决问题的过程中学习。',
 })
 
 // const GITHUB_URL = 'https://github.com/zhaogl'

@@ -12,6 +12,7 @@ import { type ViewType, useViewType } from '@site/src/hooks/useViewType'
 import BlogPostGridItems from '../BlogPostGridItems'
 
 import MyLayout from '../MyLayout'
+import {JSX} from "react";
 
 function BlogListPageMetadata(props: Props): JSX.Element {
   const { metadata } = props

@@ -4,7 +4,7 @@ import { cn } from '@site/src/lib/utils'
 import Tag from '@site/src/theme/Tag'
 import type { Props as BlogPostItemsProps } from '@theme/BlogPostItems'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import {JSX, useState} from 'react'
 
 import styles from './styles.module.css'
 
