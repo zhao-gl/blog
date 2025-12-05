@@ -28,3 +28,4 @@ yarn-error.log*
 pnpm-error.log*
 
 .vercel
+pnpm-lock.yaml

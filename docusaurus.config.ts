@@ -20,6 +20,7 @@ const config: Config = {
       'zhaogl的个人博客，主要分享编程开发知识和项目，该网站基于 React 驱动的静态网站生成器 Docusaurus 构建。',
   },
   themeConfig: {
+    // 顶部公告栏横幅
     // announcementBar: {
     //   id: 'announcementBar-3',
     //   content: ``,
@@ -36,7 +37,7 @@ const config: Config = {
       },
       {
         name: 'keywords',
-        content: '编程爱好者, 全栈开发, 主业Web前端',
+        content: '全栈开发, 主业Web前端',
       },
     ],
     docs: {
@@ -59,14 +60,13 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [
         {
           title: '学习',
           items: [
             { label: '博客', to: 'blog' },
             { label: '项目', to: 'project' },
-            { label: '前端示例', to: 'https://example.zhaogl.me' },
           ],
         },
         {
@@ -90,18 +90,12 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `
-        <p style="margin-bottom: 0;"><a href="http://beian.miit.gov.cn/">${beian}</a></p>
-        <p style="display: inline-flex; align-items: center;"><img style="height:20px;margin-right: 0.5rem;" src="/img/police.png" alt="police" height="20"/><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${beian1.match(/\d+/)?.[0]
-      }" >${beian1}</a></p>
-        <p>Copyright © 2020 - ${new Date().getFullYear()} zhaogl. | Built with Docusaurus.</p>
-        `,
     },
-    // todo 待替换
     algolia: {
-      appId: 'GV6YN1ODMO',
-      apiKey: '50303937b0e4630bec4a20a14e3b7872',
-      indexName: 'zhaogl',
+      appId: 'NX6XCWY1YF',
+      apiKey: '06204572b85ff2cfe88f45ad92116887',
+      indexName: 'crawl-zgl-blog',
+      contextualSearch: true,
     },
     prism: {
       theme: themes.oneLight,
@@ -120,12 +114,11 @@ const config: Config = {
         },
       ],
     },
-    // todo 待替换
     giscus: {
-      repo: 'zhaogl/blog',
-      repoId: 'MDEwOlJlcG9zaXRvcnkzOTc2MjU2MTI=',
+      repo: 'zhao-gl/blog',
+      repoId: 'R_kgDOOECvuQ',
       category: 'General',
-      categoryId: 'DIC_kwDOF7NJDM4CPK95',
+      categoryId: 'DIC_kwDOOECvuc4CzbCq',
       theme: 'light',
       darkTheme: 'dark_dimmed',
     } satisfies Partial<GiscusConfig>,
@@ -157,16 +150,16 @@ const config: Config = {
         sitemap: {
           priority: 0.5,
         },
-        gtag: {
-          trackingID: 'G-S4SD5NXWXF',
-          anonymizeIP: true,
-        },
+        // gtag: {
+        //   trackingID: 'G-S4SD5NXWXF',
+        //   anonymizeIP: true,
+        // },
         debug: process.env.NODE_ENV === 'development',
       } satisfies Preset.Options,
     ],
   ],
   plugins: [
-    // 'docusaurus-plugin-image-zoom',
+    'docusaurus-plugin-image-zoom',
     // '@docusaurus/plugin-ideal-image',
     // ['docusaurus-plugin-baidu-tongji', { token: 'c9a3849aa75f9c4a4e65f846cd1a5155' }],
     [
@@ -192,8 +185,6 @@ const config: Config = {
       './src/plugin/plugin-content-blog', // 为了实现全局 blog 数据，必须改写 plugin-content-blog 插件
       {
         path: 'blog',
-        editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
-          `https://github.com/zhaogl/blog/edit/main/${blogDirPath}/${blogPath}`,
         editLocalizedFiles: false,
         blogDescription: '代码人生：编织技术与生活的博客之旅',
         blogSidebarCount: 10,
@@ -202,12 +193,12 @@ const config: Config = {
         showReadingTime: true,
         readingTime: ({ content, frontMatter, defaultReadingTime }) =>
           defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
-        feedOptions: {
-          type: 'all',
-          title: 'zhaogl',
-          description: 'feedId:41215011978385457+userId:41840354283324416',
-          copyright: `Copyright © ${new Date().getFullYear()} zhaogl Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
-        },
+        // feedOptions: {
+        //   type: 'all',
+        //   title: 'zhaogl',
+        //   description: 'feedId:41215011978385457+userId:41840354283324416',
+        //   copyright: `Copyright © ${new Date().getFullYear()} zhaogl Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
+        // },
       },
     ],
     async function tailwindcssPlugin() {
@@ -227,6 +218,13 @@ const config: Config = {
         injectHtmlTags() {
           return {
             headTags: [
+              {
+                tagName: 'meta',
+                attributes: {
+                  name: 'algolia-site-verification', // 或 google-site-verification 等
+                  content: 'C57571B972410AAD',
+                },
+              },
               {
                 tagName: 'script',
                 innerHTML: '',
