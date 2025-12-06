@@ -1,0 +1,18 @@
+# Woodpecker CI configuration file for Docusaurus blog
+# Learn more at https://woodpecker-ci.org/docs/intro
+
+pipeline:
+  # Install dependencies
+  deps:
+    image: node:20-alpine
+    commands:
+      - npm install -g pnpm
+      - pnpm install --frozen-lockfile
+
+  # Build the Docusaurus website
+  build:
+    image: node:20-alpine
+    commands:
+      - pnpm run build
+
+branches: main
