@@ -39,8 +39,6 @@ pipeline:
       target: /volume1/web/zgl-blog
       verbose: true
       strip_components: 0
-    commands:
-      - echo "Deployment completed"
 
   # Post-deploy: Verify deployment
   post_deploy:
