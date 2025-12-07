@@ -17,28 +17,14 @@ pipeline:
       - npm install -g pnpm
       - pnpm run build
 
-  # 移动文件到临时目录
-  transfer:
+  deploy:
     image: appleboy/drone-scp
     settings:
       host: zhaogl.top
       port: 22
       username: zhaogl
-      password: ${NAS_SSH_PASSWORD}
+      password: Zgl101756...
       source: build/
-      target: /tmp/zgl-blog-dist/
-
-  # Move files to target directory with sudo
-  deploy:
-    image: appleboy/drone-ssh
-    settings:
-      host: zhaogl.top
-      port: 22
-      username: zhaogl
-      password: ${NAS_SSH_PASSWORD}
-      script:
-        - sudo mv /tmp/zgl-blog-dist/* /share/Web/zgl-blog/dist/
-        - sudo chown -R www-data:www-data /share/Web/zgl-blog/dist/
-        - rm -rf /tmp/zgl-blog-dist
+      target: /volume1/web/zgl-blog
 
 branches: main
