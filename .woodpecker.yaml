@@ -17,6 +17,17 @@ pipeline:
       - npm install -g pnpm
       - pnpm run build
 
+  # Pre-deploy: Show deployment info
+  pre_deploy:
+    image: alpine
+    commands:
+      - echo "Starting deployment process"
+      - echo "Target server: zhaogl.top"
+      - echo "Target path: /volume1/web/zgl-blog"
+      - echo "Build directory size: $(du -sh build/)"
+      - echo "Build directory files: $(find build/ -type f | wc -l) files"
+
+  # Deploy files with verbose logging
   deploy:
     image: appleboy/drone-scp
     settings:
@@ -26,5 +37,23 @@ pipeline:
       password: Zgl101756...
       source: build/
       target: /volume1/web/zgl-blog
+      verbose: true
+      strip_components: 0
+    commands:
+      - echo "Deployment completed"
+
+  # Post-deploy: Verify deployment
+  post_deploy:
+    image: appleboy/drone-ssh
+    settings:
+      host: zhaogl.top
+      port: 22
+      username: zhaogl
+      password: Zgl101756...
+      script:
+        - echo "Verifying deployment..."
+        - ls -la /volume1/web/zgl-blog
+        - echo "Total files deployed: $(find /volume1/web/zgl-blog -type f | wc -l)"
+        - echo "Checking index.html exists: $(test -f /volume1/web/zgl-blog/index.html && echo 'Found' || echo 'Missing')"
 
 branches: main
