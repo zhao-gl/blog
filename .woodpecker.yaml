@@ -19,7 +19,7 @@ pipeline:
 
   # Deploy the Docusaurus website to the NAS
   deploy:
-    image: appleboy/drone-scp
+    image: drillster/drone-rsync
     settings:
       host: zhaogl.top
       port: 22
@@ -27,6 +27,7 @@ pipeline:
       password: Zgl101756...
       source: build/
       target: /volume1/web/app/zgl-blog
-      verbose: true
+      delete: true          # 删除目标端多余文件
+      recursive: true       # 保留权限（可选）
 
 branches: main
