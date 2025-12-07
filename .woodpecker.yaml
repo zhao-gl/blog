@@ -48,10 +48,10 @@ pipeline:
       port: 22
       username: zhaogl
       password: Zgl101756...
-      script:
-        - echo "Verifying deployment..."
-        - ls -la /volume1/web/zgl-blog
-        - echo "Total files deployed: $(find /volume1/web/zgl-blog -type f | wc -l)"
-        - echo "Checking index.html exists: $(test -f /volume1/web/zgl-blog/index.html && echo 'Found' || echo 'Missing')"
+    commands:
+      - echo "Verifying deployment..."
+      - ls -la /volume1/web/zgl-blog
+      - echo "Total files deployed: $(find /volume1/web/zgl-blog -type f | wc -l)"
+      - echo "Checking index.html exists: $(test -f /volume1/web/zgl-blog/index.html && echo 'Found' || echo 'Missing')"
 
 branches: main
