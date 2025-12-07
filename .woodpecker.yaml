@@ -26,7 +26,7 @@ pipeline:
       username: zhaogl
       password: Zgl101756...
       source: build/
-      target: /volume1/web/zgl-blog
+      target: /volume1/web/app/zgl-blog
       verbose: true
 
 branches: main
