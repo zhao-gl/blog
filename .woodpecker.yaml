@@ -23,11 +23,13 @@ pipeline:
     image: alpine:latest
     commands:
       # 清空目标目录 → 复制构建产物 → 验证
-      - mkdir -p /nas-web/my-docusaurus-blog
-      - rm -rf /nas-web/my-docusaurus-blog/*
-      - cp -r build/* /nas-web/my-docusaurus-blog/
+      - mkdir -p /nas-web/my-blog
+      - rm -rf /nas-web/my-blog/*
+      - cp -r build/* /nas-web/my-blog/
       - echo "部署完成，目标目录文件列表："
-      - ls -l /nas-web/my-docusaurus-blog/
+      - ls -l /nas-web/my-blog/
+    volumes:
+      - /volume1/web:/nas-web
     when:
       branch: main
       status: success  # 仅构建成功后部署
