@@ -1,33 +1,37 @@
 # Woodpecker CI configuration file for Docusaurus blog
-# Learn more at https://woodpecker-ci.org/docs/intro
 
 pipeline:
-  # Install dependencies
   deps:
     image: node:20-alpine
     commands:
-      - npm install -g pnpm
-      - pnpm install --registry https://registry.npmmirror.com
-      - pnpm install --frozen-lockfile
+      - npm install -g pnpm --registry https://registry.npmmirror.com
+      - pnpm install -registry https://registry.npmmirror.com --frozen-lockfile
+    cache: # 缓存依赖，加速后续构建（关键优化）
+      mount:
+        - node_modules
+        - .pnpm-store
 
-  # Build the Docusaurus website
   build:
     image: node:20-alpine
     commands:
       - npm install -g pnpm
       - pnpm run build
+      - ls -l build/
+    depends_on: [deps]
 
-  # Deploy the Docusaurus website to the NAS
   deploy:
-    image: drillster/drone-rsync
-    settings:
-      host: zhaogl.top
-      port: 22
-      username: zhaogl
-      password: Zgl101756...
-      source: build/
-      target: /volume1/web/app/zgl-blog
-      delete: true          # 删除目标端多余文件
-      recursive: true       # 保留权限（可选）
+    image: alpine:latest
+    commands:
+      # 清空目标目录 → 复制构建产物 → 验证
+      - mkdir -p /nas-web/my-docusaurus-blog
+      - rm -rf /nas-web/my-docusaurus-blog/*
+      - cp -r build/* /nas-web/my-docusaurus-blog/
+      - echo "部署完成，目标目录文件列表："
+      - ls -l /nas-web/my-docusaurus-blog/
+    when:
+      branch: main
+      status: success  # 仅构建成功后部署
+    depends_on: [build]
 
+# 限制仅main分支触发（全局配置）
 branches: main
